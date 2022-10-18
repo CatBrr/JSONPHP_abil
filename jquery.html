@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery ja JSON</title>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                type: "GET",
+                url: "tooted.json",
+                dataType: "json",
+                success: kuvaJson,
+                error: vigaJson
+            });
+        });
+        function vigaJson(){
+            $("#container").append('<p style="color:red;">Probleemid JSON failiga!</p>');
+        }
+        function kuvaJson(json){
+            //console.log(json.tooted.toode[0].nimetus);
+            //$("#container").append(json.tooted.toode[0].nimetus);
+            $.each(json.tooted.toode, function(voti, vaartus){
+                var nimetus = vaartus.nimetus;
+                var kirjeldus = vaartus.kirjeldus;
+                var hind = vaartus.hind;
+                $("#container").append(
+                    '<h2>'+nimetus+'</h2>'+
+                    '<p>'+kirjeldus+'</p>'+
+                    '<p>'+hind+'€</p>'
+                );
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="container">
+
+</div>
+</body>
+</html>

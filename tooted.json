@@ -1,0 +1,22 @@
+[
+    {
+        "nimetus": "kapp",
+        "kirjeldus": "valge",
+        "hind": "44"
+    },
+    {
+        "nimetus": "riiul",
+        "kirjeldus": "suur",
+        "hind": "12"
+    },
+    {
+        "nimetus": "test",
+        "kirjeldus": "test",
+        "hind": "1"
+    },
+    {
+        "nimetus": "bcvlvc\u00f6",
+        "kirjeldus": "gf\u00f6lkfoot",
+        "hind": "4323"
+    }
+]
